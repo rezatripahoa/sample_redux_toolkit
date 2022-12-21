@@ -53,7 +53,7 @@ export function getAllAlbum() {
       const response = await axios.get(
         "https://jsonplaceholder.typicode.com/albums"
       );
-      dispatch(slice.actions.getAlbumSuccess(response.data));
+      dispatch(slice.actions.getAlbumSuccess(response.data.slice(0,10)));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

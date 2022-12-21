@@ -53,7 +53,7 @@ export function getAllComment() {
       const response = await axios.get(
         "https://jsonplaceholder.typicode.com/comments"
       );
-      dispatch(slice.actions.getCommentSuccess(response.data));
+      dispatch(slice.actions.getCommentSuccess(response.data.slice(0,10)));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
